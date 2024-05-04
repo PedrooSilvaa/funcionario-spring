@@ -47,6 +47,4 @@ public class Funcionario {
 		this.funcao = funcao;
 	}
 	
-	
-	
 }
