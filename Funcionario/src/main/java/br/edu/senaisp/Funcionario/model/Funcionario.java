@@ -1,18 +1,30 @@
 package br.edu.senaisp.Funcionario.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Funcionario {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer id;
+	@Column(name = "nome", nullable = false, length = 100)
 	private String nome;
+	@Column(name = "anoNascimento")
 	private int anoNascimento;
+	@Column(name = "funcao", length = 100, nullable = false)
 	private String funcao;
-	
+
 	public Funcionario(Integer id, String nome, int anoNascimento, String funcao) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.anoNascimento = anoNascimento;
 		this.funcao = funcao;
+	}
+
+	public Funcionario() {
 	}
 
 	public Integer getId() {
